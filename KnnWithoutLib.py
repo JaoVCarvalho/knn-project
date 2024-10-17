@@ -36,7 +36,6 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 for k in [1, 3, 5, 7]:
     print(f"Resultados para k = {k}:")
-
     y_predict = predict(X_train, y_train, X_test, k)
     print(classification_report(y_test, y_predict, target_names=iris.target_names))
     accuracy = accuracy_score(y_test, y_predict)

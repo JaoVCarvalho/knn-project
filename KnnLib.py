@@ -10,11 +10,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 for k in [1, 3, 5, 7]:
     print(f"Resultados para k = {k}:")
-
     clf = KNeighborsClassifier(n_neighbors=k)
-
     clf.fit(X_train,y_train)
-
     y_predict = clf.predict(X_test)
-
     print(classification_report(y_test, y_predict, target_names=iris.target_names))
