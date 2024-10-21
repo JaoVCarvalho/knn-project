@@ -55,7 +55,7 @@ def run():
         accuracy = accuracy_score(species_test, species_predict)
 
         util.print_report(report, k)
-        util.plot_metrics_table(report_dictionary, accuracy, iris.target_names, k)
+        util.plot_metrics_table(report_dictionary, accuracy, iris.target_names, k, "manual")
         util.plot_confusion_matrix(species_test, species_predict, iris, k)
 
 
