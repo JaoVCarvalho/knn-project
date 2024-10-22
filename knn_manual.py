@@ -37,7 +37,7 @@ def predict(attributes_train, species_train, attributes_test, k):
 def print_default_message():
     print("=========================================================="
           + f"\n           Classificador KNN - Manual (Hardcore)"
-          + "\n==========================================================\n\n")
+          + "\n==========================================================\n")
 
 def run():
 
@@ -49,12 +49,12 @@ def run():
 
     total_execution_time = 0
     for k in [1, 3, 5, 7]:
-        start_time = time.time()  # Começa a contagem
+        start_time = time.time()
 
         species_predict = predict(attributes_train, species_train, attributes_test, k)
 
-        end_time = time.time()  # Finaliza a contagem
-        execution_time = end_time - start_time  # Tempo de execução
+        end_time = time.time()
+        execution_time = end_time - start_time
         total_execution_time += execution_time
 
         report = classification_report(species_test, species_predict, target_names=iris.target_names)
@@ -65,6 +65,6 @@ def run():
         util.plot_metrics_table(report_dictionary, accuracy, iris.target_names, k, "manual")
         util.plot_confusion_matrix(species_test, species_predict, iris, k)
 
-        print(f"Tempo de execução para k={k} (manual): {execution_time:.6f} segundos\n")
+        print(f"Tempo de execução para k={k} (manual): {execution_time:.6f} segundos\n" + "\n==========================================================\n")
 
-    print(f"Tempo total de execução (manual): {total_execution_time:.6f} segundos\n")  # Exibe o tempo total
+    print(f"Tempo total de execução (manual): {total_execution_time:.6f} segundos")
