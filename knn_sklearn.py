@@ -8,7 +8,10 @@ import time
 def print_default_message():
     print("=========================================================="
           + f"\n           Classificador KNN - Biblioteca (Sklearn)"
-          + "\n==========================================================\n")
+          + "\n==========================================================\n"
+          + "KNN classifier using ready-made libraries like scikit-learn,\n"
+            "simplifying the implementation and optimizing time with\n"
+            "built-in functions for distance calculation and prediction.\n")
 
 def run():
 
@@ -34,10 +37,8 @@ def run():
         report_dictionary = classification_report(species_test, species_predict, target_names=iris.target_names, output_dict=True)
         accuracy = accuracy_score(species_test, species_predict)
 
-        util.print_report(report, k)
+        util.print_report(report, k, execution_time, "library")
         util.plot_metrics_table(report_dictionary, accuracy, iris.target_names, k, "library")
         util.plot_confusion_matrix(species_test, species_predict, iris, k)
 
-        print(f"Tempo de execução para k={k} (sklearn): {execution_time:.6f} segundos\n" + "\n==========================================================\n")
-
-    print(f"Tempo total de execução (sklearn): {total_execution_time:.6f} segundos\n")
+    print(f"Total execution time (library): {total_execution_time:.6f} seconds")

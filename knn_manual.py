@@ -36,8 +36,11 @@ def predict(attributes_train, species_train, attributes_test, k):
 
 def print_default_message():
     print("=========================================================="
-          + f"\n           Classificador KNN - Manual (Hardcore)"
-          + "\n==========================================================\n")
+          + f"\n           KNN Classifier - Manual (Hardcore)"
+          + "\n==========================================================\n"
+          + "\n KNN classifier implemented manually, calculating distances,\n "
+            "determining the nearest neighbors, and making predictions\n "
+            "without using external libraries for classification. \n")
 
 def run():
 
@@ -61,10 +64,8 @@ def run():
         report_dictionary = classification_report(species_test, species_predict, target_names=iris.target_names, output_dict=True)
         accuracy = accuracy_score(species_test, species_predict)
 
-        util.print_report(report, k)
+        util.print_report(report, k, execution_time,"manual")
         util.plot_metrics_table(report_dictionary, accuracy, iris.target_names, k, "manual")
         util.plot_confusion_matrix(species_test, species_predict, iris, k)
 
-        print(f"Tempo de execução para k={k} (manual): {execution_time:.6f} segundos\n" + "\n==========================================================\n")
-
-    print(f"Tempo total de execução (manual): {total_execution_time:.6f} segundos")
+    print(f"Total execution time (manual): {total_execution_time:.6f} seconds")
