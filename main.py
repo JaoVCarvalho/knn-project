@@ -12,8 +12,8 @@ def print_default_message():
 
 def main():
     print_default_message()
-    knn_manual.run();
-    knn_sklearn.run();
+    knn_manual.run()
+    knn_sklearn.run()
 
 if __name__ == "__main__":
     main()
