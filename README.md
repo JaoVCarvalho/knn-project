@@ -1,4 +1,4 @@
-# Algoritmo KNN
+# Algoritmo K-means
 
 
 ## Índice
